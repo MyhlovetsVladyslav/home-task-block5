@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <router-view />
+    <CustomSelect :options="['Option 1', 'Option 2', 'Option 3']" v-model="selectedOption" />
+    <p>Вибрано: {{ selectedOption }}</p>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import CustomSelect from './components/CustomSelect.vue';
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    CustomSelect
+  },
+  data() {
+    return {
+      selectedOption: ''
+    };
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
